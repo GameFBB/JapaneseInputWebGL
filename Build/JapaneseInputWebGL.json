@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 67108864,
+"dataUrl": "JapaneseInputWebGL.data.unityweb",
+"asmCodeUrl": "JapaneseInputWebGL.asm.code.unityweb",
+"asmMemoryUrl": "JapaneseInputWebGL.asm.memory.unityweb",
+"asmFrameworkUrl": "JapaneseInputWebGL.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
