@@ -37,7 +37,7 @@ public class JapaneseInputWebGL : MonoBehaviour
     private int PhraseNumber = 0;
     private string[] TextCandidate = new string[7];
     private int NextFocus = 2;
-    private static List<string> DeterminedList = new List<string>();
+    private static List<string> DeterminedPhraseList = new List<string>();
     private string AddText = "";
     private static string Result = "";
 
@@ -55,9 +55,9 @@ public class JapaneseInputWebGL : MonoBehaviour
 
                 //入力されたローマ字を記憶
                 RomanText = TextField.text;
-                for (int i = 0; i < DeterminedList.Count; i++)
+                for (int i = 0; i < DeterminedPhraseList.Count; i++)
                 {
-                    RomanText = RomanText.Replace(DeterminedList[i], "");
+                    RomanText = RomanText.Replace(DeterminedPhraseList[i], "");
                 }
                 RomanTextList.Add(RomanText);
 
@@ -84,7 +84,7 @@ public class JapaneseInputWebGL : MonoBehaviour
                 Placeholder.text = "Enter text...";
                 RomanText = "";
                 RomanTextList.Clear();
-                DeterminedList.Clear();
+                DeterminedPhraseList.Clear();
                 AddText = "";
                 Result = "";
                 PhraseNumber = 0;
@@ -143,11 +143,11 @@ public class JapaneseInputWebGL : MonoBehaviour
     private string ConvertToHiragana(string RomanLetters)
     {
         //確定された語句を省いて変換
-        if (DeterminedList.Count > 0)
+        if (DeterminedPhraseList.Count > 0)
         {
-            for (int i = 0; i < DeterminedList.Count; i++)
+            for (int i = 0; i < DeterminedPhraseList.Count; i++)
             {
-                RomanLetters = RomanLetters.Replace(DeterminedList[i], "");
+                RomanLetters = RomanLetters.Replace(DeterminedPhraseList[i], "");
             }
         }
 
@@ -509,7 +509,7 @@ public class JapaneseInputWebGL : MonoBehaviour
         if (PhraseCount == 1 || PhraseNumber >= PhraseCount)
         {
             //決定した変換を記憶
-            DeterminedList.Add((Placeholder.text));
+            DeterminedPhraseList.Add((Placeholder.text));
 
             //変換終了
             PhraseNumber = 0;
@@ -529,9 +529,9 @@ public class JapaneseInputWebGL : MonoBehaviour
 
             //変換後の文字列
             TextField.text = "";
-            for (int i = 0; i < DeterminedList.Count; i++)
+            for (int i = 0; i < DeterminedPhraseList.Count; i++)
             {
-                TextField.text = TextField.text + DeterminedList[i];
+                TextField.text = TextField.text + DeterminedPhraseList[i];
             }
 
             //保存
