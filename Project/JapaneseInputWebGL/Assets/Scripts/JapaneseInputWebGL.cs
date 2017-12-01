@@ -7,11 +7,7 @@ using UnityEngine.UI;
 public class JapaneseInputWebGL : MonoBehaviour
 {
     /// <summary>
-    /// 
-    /// WebGLで日本語入力
-    /// 
-    /// スペースキーで変換
-    /// 
+    /// WebGL上でローマ字を日本語に変換する（スペースキー）
     /// </summary>
 
     //インプットフィールド
@@ -85,13 +81,13 @@ public class JapaneseInputWebGL : MonoBehaviour
             {
                 //リセット
                 TextField.text = "";
-                RomanText = "";
-                AddText = "";
-                Result = "";
                 Placeholder.text = "Enter text...";
-                PhraseNumber = 0;
+                RomanText = "";
                 RomanList.Clear();
                 DeterminedList.Clear();
+                AddText = "";
+                Result = "";
+                PhraseNumber = 0;
                 ButtonCandidate1.SetActive(false);
                 ButtonCandidate2.SetActive(false);
                 ButtonCandidate3.SetActive(false);
