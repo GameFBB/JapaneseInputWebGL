@@ -30,7 +30,7 @@ public class JapaneseInputWebGL : MonoBehaviour
 
     //変数
     private static string RomanText = "";
-    private static List<string> RomanList = new List<string>();
+    private static List<string> RomanTextList = new List<string>();
     private string Hiragana;
     private JsonData JsonObject;
     private int PhraseCount;
@@ -59,7 +59,7 @@ public class JapaneseInputWebGL : MonoBehaviour
                 {
                     RomanText = RomanText.Replace(DeterminedList[i], "");
                 }
-                RomanList.Add(RomanText);
+                RomanTextList.Add(RomanText);
 
                 //変換
                 if (TextField.text != "")
@@ -83,7 +83,7 @@ public class JapaneseInputWebGL : MonoBehaviour
                 TextField.text = "";
                 Placeholder.text = "Enter text...";
                 RomanText = "";
-                RomanList.Clear();
+                RomanTextList.Clear();
                 DeterminedList.Clear();
                 AddText = "";
                 Result = "";
@@ -522,9 +522,9 @@ public class JapaneseInputWebGL : MonoBehaviour
 
             //ローマ字の文字列
             RomanText = "";
-            for (int i = 0; i < RomanList.Count; i++)
+            for (int i = 0; i < RomanTextList.Count; i++)
             {
-                RomanText = RomanText + RomanList[i];
+                RomanText = RomanText + RomanTextList[i];
             }
 
             //変換後の文字列
