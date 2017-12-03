@@ -1,0 +1,14 @@
+<linker>
+	<assembly fullname="Assembly-CSharp">
+		<type fullname="JapaneseInputWebGL">
+			<method name="ClickCandidateButtons"/>
+			<method name="ClickCandidateButtons"/>
+			<method name="ClickCandidateButtons"/>
+			<method name="ClickCandidateButtons"/>
+			<method name="ClickCandidateButtons"/>
+			<method name="ClickCandidateButtons"/>
+			<method name="ClickCandidateButtons"/>
+			<method name="OnEndEdit"/>
+		</type>
+	</assembly>
+</linker>
