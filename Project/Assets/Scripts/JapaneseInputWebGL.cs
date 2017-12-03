@@ -52,7 +52,7 @@ public class JapaneseInputWebGL : MonoBehaviour
         if (Application.platform == RuntimePlatform.WebGLPlayer ||
             Application.platform == RuntimePlatform.WindowsEditor)
         {
-            //１．変換キー(Space)が押された場合
+            //１．変換キーが押された場合（スペース）
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 //入力された空白文字を削除
@@ -82,8 +82,8 @@ public class JapaneseInputWebGL : MonoBehaviour
                 }
             }
 
-            //２．バックスペースキーが押された場合
-            if (Input.GetKeyUp(KeyCode.Backspace))
+            //２．削除キーが押された場合（バックスペース、デリート）
+            if (Input.GetKeyUp(KeyCode.Backspace) || Input.GetKeyUp(KeyCode.Delete))
             {
                 //変数のリセット
                 TextField.text = "";
@@ -107,9 +107,10 @@ public class JapaneseInputWebGL : MonoBehaviour
                 TextField.ActivateInputField();
             }
 
-            //３．TABキーで次の検索候補へフォーカスを移動
+            //３．TABキーまたは下矢印キーが押された場合
             if (ButtonCandidate1.activeSelf == true && (Input.GetKeyUp(KeyCode.Tab) || Input.GetKeyUp(KeyCode.DownArrow)))
             {
+                //次の検索候補へフォーカスを移動
                 switch (NextFocus)
                 {
                     case 1:
