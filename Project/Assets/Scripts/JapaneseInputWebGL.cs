@@ -13,7 +13,7 @@ public class JapaneseInputWebGL : MonoBehaviour
 
     //インプットフィールド
     [SerializeField] private InputField TextField;
-    [SerializeField] private Text Placeholder;  //変換された語句の一時保存先として使用
+    [SerializeField] private Text Placeholder;  //変換された語句の一時保存場所として使用
 
     //ボタン（変換候補を表示）
     [SerializeField] private GameObject ButtonCandidate1;
@@ -28,8 +28,8 @@ public class JapaneseInputWebGL : MonoBehaviour
     [SerializeField] private Text TextCandidate3;
     [SerializeField] private Text TextCandidate4;
     [SerializeField] private Text TextCandidate5;
-    [SerializeField] private Text TextCandidate6;  //ひらがな
-    [SerializeField] private Text TextCandidate7;  //ローマ字
+    [SerializeField] private Text TextCandidate6;  //変換候補：ひらがな
+    [SerializeField] private Text TextCandidate7;  //変換候補：ローマ字
 
     //変数
     private static string RomanText = "";
@@ -338,6 +338,11 @@ public class JapaneseInputWebGL : MonoBehaviour
         RomanLetters = RomanLetters.Replace("tu", "つ");
         RomanLetters = RomanLetters.Replace("te", "て");
         RomanLetters = RomanLetters.Replace("to", "と");
+        RomanLetters = RomanLetters.Replace("tsa", "つぁ");
+        RomanLetters = RomanLetters.Replace("tsi", "つぃ");
+        RomanLetters = RomanLetters.Replace("tsu", "つ");
+        RomanLetters = RomanLetters.Replace("tse", "つぇ");
+        RomanLetters = RomanLetters.Replace("tso", "つぉ");
         RomanLetters = RomanLetters.Replace("tya", "ちゃ");
         RomanLetters = RomanLetters.Replace("tyi", "ちぃ");
         RomanLetters = RomanLetters.Replace("tyu", "ちゅ");
